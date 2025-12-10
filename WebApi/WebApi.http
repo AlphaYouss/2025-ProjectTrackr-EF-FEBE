@@ -1,6 +1,31 @@
-@WebApi_HostAddress = http://localhost:5255
+@WebApi_HostAddress = https://localhost:7136
+@JWT_Token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjJjNjc2NjgzLWE3NDEtNGE2MS04N2YzLWEyZDM3M2JkZGEyOSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJ0ZXN0dXNlciIsImV4cCI6MTc2NTQ4ODYyNSwiaXNzIjoiUHJvamVjdFRyYWNrci1FRi1GRUJFIiwiYXVkIjoiUHJvamVjdFRyYWNrci1FRi1GRUJFX3VzZXJzIn0.6RODlpeJOTAeuMUvXyVou01QCanf8icpEJnSsSf1ZmA
 
-GET {{WebApi_HostAddress}}/weatherforecast/
-Accept: application/json
+### Test user registration
+POST {{WebApi_HostAddress}}/user/register
+Content-Type: application/json
+
+{
+    "username": "testuser",
+    "email": "testuser@example.com",
+    "password": "TestPassword123!",
+    "passwordRepeat": "TestPassword123!"
+}
 
 ###
+
+### Test user login
+POST {{WebApi_HostAddress}}/user/login
+Content-Type: application/json
+
+{
+    "usernameEmail": "testuser@example.com",
+    "password": "TestPassword123!"
+}
+
+###
+
+### Test get current user (requires JWT)
+GET {{WebApi_HostAddress}}/user/me
+Accept: application/json
+Authorization: Bearer {{JWT_Token}}

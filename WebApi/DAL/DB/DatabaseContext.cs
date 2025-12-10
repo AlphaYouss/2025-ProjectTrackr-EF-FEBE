@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using WebApi.Models;
 
-namespace WebApi.DAL
+namespace WebApi.DAL.DB
 {
     public class DatabaseContext : DbContext
     {

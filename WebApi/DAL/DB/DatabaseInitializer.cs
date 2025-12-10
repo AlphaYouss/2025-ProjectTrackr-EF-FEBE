@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using WebApi.Models;
 
-namespace WebApi.DAL
+namespace WebApi.DAL.DB
 {
     public class DatabaseInitializer
     {

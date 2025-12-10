@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
-namespace WebApi.DAL
+namespace WebApi.DAL.DB
 {
     public class DatabaseContextFactory : IDesignTimeDbContextFactory<DatabaseContext>
     {
